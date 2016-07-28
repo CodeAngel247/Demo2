@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,10 +38,10 @@ namespace Demo
 
             arrSomeInfo = new List<SomeInfo>() 
                 {
-                new SomeInfo(){ ID=3, Title="test", ViewCount=5},
-                new SomeInfo(){ ID=3, Title="test", ViewCount=5},
-                new SomeInfo(){ ID=3, Title="test", ViewCount=5},
-                new SomeInfo(){ ID=3, Title="test", ViewCount=5},
+                new SomeInfo(){ ID="3", Title="test", ViewCount="55"},
+                new SomeInfo(){ ID="3", Title="test", ViewCount="55"},
+                new SomeInfo(){ ID="3", Title="test", ViewCount="55"},
+                new SomeInfo(){ ID="3", Title="test", ViewCount="55"},
                 };
 
             CollectionViewSource itemCollectionViewSource;
@@ -52,13 +52,25 @@ namespace Demo
             this.MyGrid.DataContext = arrSomeInfo;  
         }
 
+        private void ButtonClick(object sender, RoutedEventArgs e)
+        {
+            var data = new SomeInfo
+            {
+                ID = IDTextbox.Text,
+                Title = TitleTextbox.Text,
+                ViewCount = ViewCountTextbox.Text
+            };
+
+            MyGrid.Items.Add(data);
+        }
+
     }
 
         public class SomeInfo
         {
-            public int ID {get;set;}
+            public string ID {get;set;}
             public string Title {get;set;}
-            public int ViewCount {get;set;}
+            public string ViewCount {get;set;}
         }
 
 }
