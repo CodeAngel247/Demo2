@@ -6,17 +6,27 @@
     <Window.Resources>
         <CollectionViewSource x:Key="ItemCollectionViewSource" CollectionViewType="ListCollectionView"/>
     </Window.Resources>
-    
-    
     <Grid>
+        <Grid  Background="CadetBlue" Height="110" VerticalAlignment="Bottom">
+
+            <TextBox Name="IDTitlebox" Text="ID" Width="75" Height="22" Background="Ivory" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US" Margin="326,10,240,68" />
+            <TextBox Name="TitleTextbox" Text="Title" Width="75" Height="22" Background="Ivory"  AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US" Margin="430,10,138,68" />
+            <TextBox Name="ViewCountTextbox" Text="View Count"  TextAlignment="Center" Width="75" Height="22" Background="Ivory" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US" Margin="523,10,44,68" />
+
+            <Button Content="ADD Row Grid" Foreground="White"  FontWeight="Bold" Background="Plum" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Click="ButtonClick" Margin="473,60,0,0"/>
+        </Grid>
+
+        <Grid>
 
 
-        <DataGrid Width="300" Height="300"   HorizontalAlignment="Right" Margin="25, 25, 25, 25" Name="MyGrid" AutoGenerateColumns="False" ItemsSource="{Binding}">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="cID" Binding="{Binding ID}" Header="ID" />
-                <DataGridTextColumn x:Name="cName" Binding="{Binding Title}" Header="Title" />
-                <DataGridTextColumn x:Name="cDescription" Binding="{Binding ViewCount}" Header="ViewCount" />
-            </DataGrid.Columns>
-        </DataGrid>
+            <DataGrid  Background="Azure" Width="300" Height="300"   HorizontalAlignment="Right" Margin="0,66,22,103" Name="MyGrid" AutoGenerateColumns="False" ItemsSource="{Binding}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="cID" Binding="{Binding ID}" Header="ID" Width="85" />
+                    <DataGridTextColumn x:Name="cName" Binding="{Binding Title}" Header="Title" Width="85"/>
+                    <DataGridTextColumn x:Name="cDescription" Binding="{Binding ViewCount}" Width="85" Header="ViewCount" />
+                </DataGrid.Columns>
+
+            </DataGrid>
+        </Grid>
     </Grid>
 </Window>
